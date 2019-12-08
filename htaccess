@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{HTTP_HOST} !=www.techlab.client.runetsoft.ru [NC]
+RewriteCond %{HTTP_HOST} !=techlab.client.runetsoft.ru [NC]
+RewriteRule ^(.*)$ http://techlab.client.runetsoft.ru/upload/$1
+</IfModule>
+
+<FilesMatch "\.(php.?|phtml|pl|aspx?|cgi|exe)\..*">
+        Order Allow,Deny
+        Deny from All
+</FilesMatch>
+
+<IfModule mod_mime.c>
+	AddType text/plain .php .php3 .php4 .php5 .php6 .phtml .pl .asp .aspx .cgi .exe
+</IfModule>
+
+#<IfModule mod_php5.c>
+#	php_flag engine off
+#</IfModule>
+#<IfModule mod_mime.c>
+#	<Files ~ \.(php|php3|php4|php5|php6|phtml|pl|asp|aspx|cgi|dll|exe|shtm|shtml|fcg|fcgi|fpl|asmx|pht|py|psp|rb|var)>
+#		SetHandler text/plain
+#		ForceType text/plain
+#	</Files>
+#</IfModule>
