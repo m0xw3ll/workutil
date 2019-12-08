@@ -3,9 +3,9 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{HTTP_HOST} !=www.techlab.client.runetsoft.ru [NC]
-RewriteCond %{HTTP_HOST} !=techlab.client.runetsoft.ru [NC]
-RewriteRule ^(.*)$ http://techlab.client.runetsoft.ru/upload/$1
+RewriteCond %{HTTP_HOST} !=www.<site-name> [NC]
+RewriteCond %{HTTP_HOST} !=<site-name> [NC]
+RewriteRule ^(.*)$ http://<site-name>/upload/$1
 </IfModule>
 
 <FilesMatch "\.(php.?|phtml|pl|aspx?|cgi|exe)\..*">
